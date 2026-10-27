@@ -1,0 +1,3 @@
+Model,Test Accuracy
+Logistic Regression,0.9474
+Random Forest,0.9357

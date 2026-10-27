@@ -1,0 +1,7 @@
+TASK 6: LABEL QUALITY REPORT
+==================================================
+
+Conflicting feature groups: 5
+Rows involved in conflicts: 10
+Random rows audited: 50
+Rows requiring review: 3

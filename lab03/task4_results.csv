@@ -1,0 +1,4 @@
+Model,Parameters,Test Accuracy (%)
+MLP,235146,87.88
+CNN,20490,89.74
+Attention,70794,84.34
