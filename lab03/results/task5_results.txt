@@ -1,0 +1,24 @@
+Task 5: Accuracy and Cost Trade-offs
+
+MLP:
+Parameters: 235146
+Test accuracy: 87.88%
+Batch 1 latency: 0.2803 ms
+
+CNN:
+Parameters: 20490
+Test accuracy: 89.74%
+Batch 1 latency: 0.9859 ms
+
+Attention:
+Parameters: 70794
+Test accuracy: 84.34%
+Batch 1 latency: 1.9515 ms
+
+Graphs:
+accuracy_vs_parameters.png
+accuracy_vs_latency.png
+
+Conclusion:
+The CNN achieved the highest accuracy with the fewest parameters.
+The MLP was the fastest for single-image inference.
