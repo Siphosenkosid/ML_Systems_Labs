@@ -1,0 +1,6 @@
+TASK 7: SHA256 DATASET HASH REPORT
+==================================================
+
+Training SHA256: 974a0ee693a2ef3fc6c43a5c9fd17bb64e1c7618f367bcb62e25be632a3f5c7d
+Testing SHA256: 8aa57a21d018b782a9be871f0e2986b630d0bf1941e1637ca566d2feeff8a2b7
+Combined SHA256: 323b5f3b613e23da9de7e96586d9e84a6ac305fdd37ed19410e85b42dde5d696

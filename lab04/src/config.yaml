@@ -1,0 +1,46 @@
+
+# Lab 4: Pipeline Configuration
+
+dataset:
+  name: adult
+  version: 2
+  source: OpenML
+
+split:
+  test_size: 0.30
+  random_state: 42
+  stratify: true
+
+preprocessing:
+  numeric_imputation: median
+  categorical_imputation: most_frequent
+  lower_percentile: 0.01
+  upper_percentile: 0.99
+  remove_train_duplicates: true
+
+features:
+  numerical:
+    - age
+    - fnlwgt
+    - education-num
+    - capital-gain
+    - capital-loss
+    - hours-per-week
+
+  categorical:
+    - workclass
+    - education
+    - marital-status
+    - occupation
+    - relationship
+    - race
+    - sex
+    - native-country
+
+  target: class
+
+output:
+  directory: results
+  hash_file: dataset_hash.txt
+  processed_train: processed_train.csv
+  processed_test: processed_test.csv
