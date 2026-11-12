@@ -1,0 +1,97 @@
+LAB 05 - TASK 6: PYTORCH FRAMEWORK PERFORMANCE
+-----------------------------------------------------------------
+
+PyTorch version: 2.3.1+cpu
+Device: CPU
+Warm-up iterations: 100
+Timing repetitions: 5
+Operations per repetition: 500
+
+1. COMPUTATION GRAPH INSPECTION
+Model architecture: 2 -> 8 -> 1
+Hidden activation: ReLU
+Output activation: Sigmoid
+Input shape: (32, 2)
+Output shape: (32, 1)
+Model parameters: 33
+Maximum output difference: 0.000000000000e+00
+Graph saved to: task6_graph.txt
+
+Graph operations:
+aten::linear: Found
+aten::relu: Found
+aten::sigmoid: Found
+
+2. EAGER VS TRACED EXECUTION
+
+Eager times (ms per forward pass):
+Run 1: 0.131046 ms
+Run 2: 0.184021 ms
+Run 3: 0.124248 ms
+Run 4: 0.116929 ms
+Run 5: 0.073092 ms
+
+Traced times (ms per forward pass):
+Run 1: 0.058000 ms
+Run 2: 0.096918 ms
+Run 3: 0.095000 ms
+Run 4: 0.091706 ms
+Run 5: 0.099711 ms
+
+Eager median: 0.124248 ms
+Traced median: 0.095000 ms
+Eager / traced ratio: 1.308x
+Traced execution was faster.
+
+3. TENSOR PROPERTIES
+
+Original tensor:
+Shape: (512, 512)
+Dtype: torch.float32
+Strides: (512, 1)
+Contiguous: True
+
+Transposed view:
+Shape: (512, 512)
+Dtype: torch.float32
+Strides: (1, 512)
+Contiguous: False
+
+Contiguous copy:
+Shape: (512, 512)
+Dtype: torch.float32
+Strides: (512, 1)
+Contiguous: True
+
+Values identical: True
+
+4. CONTIGUOUS VS NON-CONTIGUOUS PERFORMANCE
+Operation: torch.sin
+Tensor shape: (512, 512)
+
+Contiguous times (ms):
+Run 1: 0.428609 ms
+Run 2: 0.456310 ms
+Run 3: 0.429376 ms
+Run 4: 0.321801 ms
+Run 5: 0.262360 ms
+
+Non-contiguous times (ms):
+Run 1: 0.349174 ms
+Run 2: 0.250302 ms
+Run 3: 0.260383 ms
+Run 4: 0.269803 ms
+Run 5: 0.287310 ms
+
+Contiguous median: 0.428609 ms
+Non-contiguous median: 0.269803 ms
+Non-contiguous / contiguous ratio: 0.629x
+Non-contiguous operation was faster.
+
+5. CONCLUSION
+Tracing improved execution speed for this model.
+Non-contiguous layout did not increase operation time.
+Results depend on model size, tensor layout,
+operation type, and execution overhead.
+
+Performance chart: task6_performance.png

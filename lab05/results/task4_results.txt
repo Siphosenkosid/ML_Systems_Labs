@@ -1,0 +1,25 @@
+LAB 05 - TASK 4: GRADIENT VERIFICATION
+-----------------------------------------------------------------
+
+Function: ReLU((a*b+c)^2)
+Input values: a=2.0, b=3.0, c=1.0
+Custom output: 49.0
+PyTorch output: 49.0
+
+1. GRADIENT COMPARISON
+Variable  Custom         PyTorch        Numerical      
+-----------------------------------------------------------------
+a         42.00000000    42.00000000    42.00000000    
+b         28.00000000    28.00000000    28.00000000    
+c         14.00000000    14.00000000    14.00000000    
+
+2. MAXIMUM ABSOLUTE DIFFERENCES
+Custom vs PyTorch: 0.000000000000e+00
+Custom vs Numerical: 8.968754627858e-10
+PyTorch vs Numerical: 8.968754627858e-10
+
+Overall maximum difference: 8.968754627858e-10
+Required tolerance: 1.000000000000e-06
+
+3. FINAL VERIFICATION
+Status: PASSED

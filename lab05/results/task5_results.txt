@@ -1,0 +1,57 @@
+LAB 05 - TASK 5: NEURAL NETWORK TRAINING
+------------------------------------------------------------
+Dataset: make_moons
+Total samples: 100
+Training samples: 80
+Testing samples: 20
+Architecture: 2 -> 8 -> 1
+Hidden activation: ReLU
+Output activation: Sigmoid
+Loss: Binary Cross-Entropy
+Epochs: 60
+Learning rate: 0.05
+Number of runs: 5
+
+1. TRAINING RESULTS
+
+Run 1
+Custom time: 1.7957 seconds
+Custom accuracy: 90.00%
+PyTorch time: 3.5480 seconds
+PyTorch accuracy: 90.00%
+
+Run 2
+Custom time: 1.8208 seconds
+Custom accuracy: 90.00%
+PyTorch time: 3.7910 seconds
+PyTorch accuracy: 90.00%
+
+Run 3
+Custom time: 1.8057 seconds
+Custom accuracy: 90.00%
+PyTorch time: 3.0122 seconds
+PyTorch accuracy: 90.00%
+
+Run 4
+Custom time: 1.7749 seconds
+Custom accuracy: 90.00%
+PyTorch time: 3.6529 seconds
+PyTorch accuracy: 90.00%
+
+Run 5
+Custom time: 2.0152 seconds
+Custom accuracy: 90.00%
+PyTorch time: 3.7996 seconds
+PyTorch accuracy: 90.00%
+
+2. MEDIAN OF 5 RUNS
+Custom median time: 1.8057 seconds
+PyTorch median time: 3.6529 seconds
+Custom median accuracy: 90.00%
+PyTorch median accuracy: 90.00%
+Custom / PyTorch time ratio: 0.49x
+
+3. CONCLUSION
+Custom engine was faster.
+Both models used the same architecture,
+initial parameters, data, and SGD settings.

@@ -1,0 +1,42 @@
+LAB 05 - TASK 3: BACKPROPAGATION
+---------------------------------------------
+
+1. Forward Pass
+a = 2.0
+b = 3.0
+c = 1.0
+a * b = 6.0
+a * b + c = 7.0
+(a * b + c) ** 2 = 49.0
+Final output = 49.0
+
+2. Backward Pass
+Output gradient = 1.0
+Gradient of a = 42.0
+Gradient of b = 28.0
+Gradient of c = 14.0
+
+3. Topological Sorting
+Number of nodes = 7
+Forward topological order:
+1. Operation: Input, Data: 2.0, Gradient: 42.0
+2. Operation: Input, Data: 3.0, Gradient: 28.0
+3. Operation: *, Data: 6.0, Gradient: 14.0
+4. Operation: Input, Data: 1.0, Gradient: 14.0
+5. Operation: +, Data: 7.0, Gradient: 14.0
+6. Operation: **2, Data: 49.0, Gradient: 1.0
+7. Operation: ReLU, Data: 49.0, Gradient: 1.0
+
+4. Gradient Verification
+a: Expected = 42.0, Actual = 42.0, Difference = 0.0
+b: Expected = 28.0, Actual = 28.0, Difference = 0.0
+c: Expected = 14.0, Actual = 14.0, Difference = 0.0
+Gradient verification: PASSED
+
+5. Gradient Accumulation Test
+Expression: x * x + x
+x = 3.0
+Output = 12.0
+Expected gradient = 7.0
+Actual gradient = 7.0
+Accumulation test: PASSED

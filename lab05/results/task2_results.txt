@@ -1,0 +1,30 @@
+LAB 05 - TASK 2: OPERATIONS AND COMPUTATION GRAPH
+-------------------------------------------------------
+
+1. Addition
+2 + 3 = 5.0
+
+2. Multiplication
+2 * 3 = 6.0
+
+3. Power
+2 ** 2 = 4.0
+
+4. ReLU
+ReLU(5) = 5.0
+ReLU(-3) = 0.0
+
+5. Complete Computation Graph
+Expression: ((a * b + c) ** 2).relu().sum()
+a = 2.0
+b = 3.0
+c = 1.0
+a * b = 6.0
+a * b + c = 7.0
+(a * b + c) ** 2 = 49.0
+Final output = 49.0
+
+6. Graph Information
+Final operation: ReLU
+Final node parents: 1
+Gradient initialized to: 0.0

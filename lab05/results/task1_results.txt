@@ -1,0 +1,12 @@
+LAB 05 - TASK 1: VALUE NODE
+----------------------------------------
+Node a: Value(data=2.0, grad=0.0)
+Node b: Value(data=3.0, grad=0.0)
+Node c: Value(data=6.0, grad=0.0)
+
+Node c information:
+Data: 6.0
+Gradient: 0.0
+Operation: *
+Number of parents: 2
+Local derivative rule callable: True
