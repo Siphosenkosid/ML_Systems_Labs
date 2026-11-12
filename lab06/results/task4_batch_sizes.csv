@@ -1,0 +1,6 @@
+Batch Size,Throughput (samples/s),Peak Memory (MB),Memory Type,Final Validation Accuracy (%)
+32,3749.61,2.39,Python traced allocations,87.6
+64,6270.51,2.21,Python traced allocations,87.44
+128,6354.51,2.21,Python traced allocations,88.08
+256,6395.67,2.2,Python traced allocations,86.78
+512,6603.78,2.21,Python traced allocations,85.46

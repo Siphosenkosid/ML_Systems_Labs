@@ -1,0 +1,11 @@
+LAB 06 - TASK 3
+DataLoader Worker Comparison
+---------------------------------------------
+Workers: 0 | Time: 16.15s | Data wait: 13.08s | Throughput: 3405.99
+Workers: 1 | Time: 17.03s | Data wait: 10.12s | Throughput: 3229.89
+Workers: 2 | Time: 15.09s | Data wait: 4.25s | Throughput: 3644.68
+Workers: 4 | Time: 24.16s | Data wait: 0.91s | Throughput: 2276.87
+Workers: 8 | Time: 37.86s | Data wait: 1.24s | Throughput: 1452.76
+
+Best worker count: 2
+Best throughput: 3644.68 samples/s

@@ -1,0 +1,9 @@
+LAB 06 - TASK 1
+YAML-Driven Training Pipeline
+----------------------------------------
+Device: cpu
+Seed: 42
+Best Validation Accuracy: 87.90%
+Test Accuracy: 87.47%
+Test Loss: 0.3584
+Checkpoint: C:\Users\robin\OneDrive\Desktop\ML_Systems_Labs\lab06\results\checkpoints\task1_checkpoint.pth

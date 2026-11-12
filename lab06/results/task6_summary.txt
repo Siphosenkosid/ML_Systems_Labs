@@ -1,0 +1,12 @@
+LAB 06 - TASK 6
+Gradient Accumulation Comparison
+---------------------------------------------
+Device: cpu
+Effective batch size: 256
+Epochs: 5
+
+Normal final accuracy: 86.78%
+Accumulation final accuracy: 86.68%
+Accuracy difference: 0.10 percentage points
+Normal optimizer updates per epoch: 215
+Accumulation updates per epoch: 215

@@ -1,0 +1,7 @@
+Optimizer,Scheduler,Final Accuracy (%),Best Accuracy (%),Final Validation Loss,Time (s)
+SGD,StepLR,80.16,80.16,0.5867,99.5
+SGD,CosineAnnealingLR,80.16,80.16,0.5835,95.36
+SGD,ReduceLROnPlateau,82.78,82.78,0.5155,94.42
+Adam,StepLR,88.36,88.38,0.3206,94.82
+Adam,CosineAnnealingLR,88.52,88.52,0.3202,96.03
+Adam,ReduceLROnPlateau,88.16,88.44,0.3272,100.7

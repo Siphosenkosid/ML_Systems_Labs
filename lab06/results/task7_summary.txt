@@ -1,0 +1,11 @@
+LAB 06 - TASK 7
+Checkpoint and Resume Training
+---------------------------------------------
+Checkpoint epoch: 3
+Resumed from epoch: 4
+Total epochs: 5
+
+Uninterrupted final accuracy: 87.10%
+Resumed final accuracy: 87.10%
+Maximum training loss difference: 0.00000000
+Maximum validation accuracy difference: 0.0000 percentage points

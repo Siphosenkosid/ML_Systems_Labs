@@ -1,0 +1,12 @@
+LAB 06 - TASK 5
+Optimizer and Scheduler Comparison
+--------------------------------------------------
+SGD + StepLR | Final Accuracy: 80.16% | Best Accuracy: 80.16% | Time: 99.50s
+SGD + CosineAnnealingLR | Final Accuracy: 80.16% | Best Accuracy: 80.16% | Time: 95.36s
+SGD + ReduceLROnPlateau | Final Accuracy: 82.78% | Best Accuracy: 82.78% | Time: 94.42s
+Adam + StepLR | Final Accuracy: 88.36% | Best Accuracy: 88.38% | Time: 94.82s
+Adam + CosineAnnealingLR | Final Accuracy: 88.52% | Best Accuracy: 88.52% | Time: 96.03s
+Adam + ReduceLROnPlateau | Final Accuracy: 88.16% | Best Accuracy: 88.44% | Time: 100.70s
+
+Best combination: Adam + CosineAnnealingLR
+Final Accuracy: 88.52%

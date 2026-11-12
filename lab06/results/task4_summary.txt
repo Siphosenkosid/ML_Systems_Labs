@@ -1,0 +1,16 @@
+LAB 06 - TASK 4: BATCH-SIZE STUDY
+--------------------------------------------------
+Device: cpu
+Workers: 2
+Epochs per batch size: 5
+
+Batch: 32 | Throughput: 3749.61 | Memory: 2.39 MB | Accuracy: 87.60%
+Batch: 64 | Throughput: 6270.51 | Memory: 2.21 MB | Accuracy: 87.44%
+Batch: 128 | Throughput: 6354.51 | Memory: 2.21 MB | Accuracy: 88.08%
+Batch: 256 | Throughput: 6395.67 | Memory: 2.20 MB | Accuracy: 86.78%
+Batch: 512 | Throughput: 6603.78 | Memory: 2.21 MB | Accuracy: 85.46%
+
+Fastest batch size: 512
+Most accurate batch size: 128
+
+CPU memory values represent Python traced allocations, not total system RAM.

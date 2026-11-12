@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 .env
 .ipynb_checkpoints/
+lab06/results/mlruns/
+data/

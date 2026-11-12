@@ -1,0 +1,5 @@
+Operation,Time (s),Share (%)
+Data Loading,19.7565,87.12
+Forward Pass,0.7018,3.09
+Backward Pass,0.8725,3.85
+Optimizer Step,1.3462,5.94

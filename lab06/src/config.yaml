@@ -1,0 +1,23 @@
+
+seed: 42
+
+data:
+  batch_size: 128
+  num_workers: 0
+
+model:
+  name: mlp
+  hidden_size: 256
+
+training:
+  epochs: 5
+  learning_rate: 0.001
+  optimizer: adam
+
+paths:
+  results_dir: lab06/results
+  checkpoint: lab06/results/checkpoints/task1_checkpoint.pth
+
+mlflow:
+  experiment_name: Lab06_FashionMNIST
+  tracking_uri: file:./lab06/results/mlruns
