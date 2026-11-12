@@ -17,7 +17,6 @@ Addition, multiplication, powers, and ReLU were implemented to build computation
 
 For the expression `ReLU((a*b+c)^2)`, with `a=2`, `b=3`, and `c=1`, the output was **49.0**.
 
-![Task 2 Calculations](results/calculations/task2_calculations.jpg)
 
 ## Task 3: Backpropagation
 
@@ -31,7 +30,6 @@ The calculated gradients were:
 
 A shared-node test using `x*x+x` also passed, producing a gradient of **7** when `x=3`.
 
-![Task 3 Calculations](results/calculations/task3_calculations.jpg)
 
 ## Task 4: Gradient Verification
 
@@ -41,7 +39,6 @@ All three methods produced gradients of **42, 28, and 14**.
 
 The maximum absolute difference was **8.96875 × 10⁻¹⁰**, below the required tolerance of 10⁻⁶. The verification passed.
 
-![Task 4 Calculations](results/calculations/task4_calculations.jpg)
 
 ## Task 5: Neural Network Training
 
@@ -58,7 +55,6 @@ Training was repeated five times. The median training times were:
 
 The custom engine was faster in this small experiment, likely because PyTorch incurred additional overhead during sample-by-sample training. This does not imply that custom autograd is generally faster than PyTorch.
 
-![Task 5 Calculations](results/calculations/task5_calculations.jpg)
 
 ## Task 6: PyTorch Framework Performance
 
