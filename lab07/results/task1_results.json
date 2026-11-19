@@ -1,0 +1,9 @@
+{
+    "model": "BaselineCNN",
+    "parameters": 856074,
+    "accuracy_percent": 90.94,
+    "size_mb": 3.269529342651367,
+    "latency_ms": 1.2482709996402264,
+    "device": "cpu",
+    "epochs": 5
+}

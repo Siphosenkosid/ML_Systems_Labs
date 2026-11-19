@@ -1,0 +1,7 @@
+model,data,model_efficiency,accuracy_percent,parameters,size_mb,compute_latency_ms,energy
+Baseline,Fashion-MNIST,Dense CNN,90.94,856074,3.27,0.8545,Not measured
+Global 95%,Fashion-MNIST,95% unstructured sparsity,90.39,856074,3.27,0.9353,Not measured
+Layerwise 95%,Fashion-MNIST,95% unstructured sparsity,74.51,856074,3.27,1.0531,Not measured
+Structured 50%,Fashion-MNIST,50% convolutional filter pruning,91.23,440650,1.685,0.6534,Not measured
+plain_student,Fashion-MNIST labels,Compact CNN,89.31,105866,0.407,0.6012,Not measured
+distilled_student,Fashion-MNIST; teacher outputs,Compact CNN,88.63,105866,0.407,0.6049,Not measured
