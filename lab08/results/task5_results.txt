@@ -1,0 +1,134 @@
+
+LAB 08 - TASK 5: COMBINED MODEL OPTIMISATION
+=================================================================
+
+PyTorch version: 2.3.1+cpu
+Device: CPU
+Backend: fbgemm
+CPU threads: 1
+Test samples: 10000
+Calibration samples: 500
+Random seed: 42
+Evaluation batch size: 128
+Latency batch size: 1
+Warm-up iterations: 50
+Timing iterations per repetition: 500
+Timing repetitions: 5
+Reported latency: Median of five average measurements
+
+MODEL COMPARISON
+-----------------------------------------------------------------
+           Model  Parameters       Precision  Accuracy (%)  Size (MB)  Latency (ms)  Accuracy Drop (pp)  Size Reduction (%)  Compression Ratio  Speedup
+   Baseline FP32      856074            FP32       90.9400     3.2695        0.7812              0.0000              0.0000             1.0000   1.0000
+     Pruned FP32      440650            FP32       91.2300     1.6849        0.4543             -0.2900             48.4660             1.9405   1.7196
+  Distilled FP32      105866            FP32       88.6300     0.4072        0.3963              2.3100             87.5450             8.0289   1.9712
+    Dynamic INT8      856074 Mixed FP32/INT8       90.9200     0.8775        0.8428              0.0200             73.1620             3.7261   0.9270
+     Static INT8      856074     Static INT8       90.7900     0.8356        0.6385              0.1500             74.4432             3.9128   1.2236
+   Pruned + INT8      440650     Static INT8       91.2300     0.4383        0.5409             -0.2900             86.5948             7.4598   1.4444
+Distilled + INT8      105866     Static INT8       88.4400     0.1114        0.5314              2.5000             96.5917            29.3403   1.4702
+
+OBSERVATIONS
+-----------------------------------------------------------------
+Structured pruning reduces the number of convolutional
+filters and connected weights.
+
+Knowledge distillation transfers information from
+a larger teacher model to a smaller student model.
+
+Quantization reduces numerical precision and model
+storage requirements.
+
+Combining these techniques can further reduce model
+size and computational requirements.
+
+Dynamic quantization was applied to Linear layers.
+
+Static quantization was applied to supported
+convolutional and Linear layers.
+
+The dynamic and static models were recreated from
+the trained FP32 baseline using the same settings
+as Tasks 2 and 3.
+
+No additional model training was performed.
+
+The parameter column represents the number of logical
+weights and biases before quantization.
+
+A negative accuracy drop means the model achieved
+higher accuracy than the original baseline.
+
+All sizes are serialized checkpoint sizes in MiB.
+
+
+DEPLOYMENT RECOMMENDATIONS
+=================================================================
+
+1. CLOUD
+Recommended model: Pruned FP32
+Accuracy: 91.23%
+Size: 1.6849 MB
+Latency: 0.4543 ms
+
+Cloud environments generally have more computational
+resources. The model with the highest accuracy is
+selected because model size is less restrictive.
+
+
+2. EDGE
+Recommended model: Pruned FP32
+Accuracy: 91.23%
+Size: 1.6849 MB
+Latency: 0.4543 ms
+
+Edge devices require fast local inference while
+maintaining reliable accuracy.
+
+The fastest model within 1 percentage point of
+baseline accuracy is selected.
+
+
+3. MOBILE
+Recommended model: Distilled + INT8
+Accuracy: 88.44%
+Size: 0.1114 MB
+Latency: 0.5314 ms
+
+Mobile devices have limited storage, memory and
+battery capacity.
+
+The smallest model within 2.5 percentage points
+of baseline accuracy is selected.
+
+
+4. TINYML
+Candidate model: Distilled + INT8
+Accuracy: 88.44%
+Size: 0.1114 MB
+Latency: 0.5314 ms
+
+TinyML requires extremely small models suitable
+for microcontrollers.
+
+The smallest model is selected as a candidate
+for further conversion and optimisation.
+
+Actual deployment requires checking flash memory,
+activation RAM, supported operators and runtime
+compatibility.
+
+
+LIMITATIONS
+-----------------------------------------------------------------
+All latency measurements were performed on a desktop
+CPU using the FBGEMM backend.
+
+Actual performance on cloud, edge, mobile and TinyML
+hardware must be measured separately.
+
+The accuracy thresholds are experimental selection
+criteria rather than universal deployment requirements.
+
+Checkpoint size does not represent total runtime
+memory consumption.
+

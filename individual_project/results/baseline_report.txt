@@ -1,0 +1,68 @@
+
+CREDIT CARD FRAUD DETECTION
+BASELINE MODEL REPORT
+============================================================
+
+MODEL CONFIGURATION
+------------------------------------------------------------
+Model: Logistic Regression
+Class weight: balanced
+Solver: lbfgs
+Maximum iterations: 1000
+Decision threshold: 0.5
+
+DATASET
+------------------------------------------------------------
+Training samples: 226980
+Testing samples: 56746
+Number of features: 30
+
+EVALUATION METRICS
+------------------------------------------------------------
+Accuracy: 0.975311
+Precision: 0.056386
+Recall: 0.873684
+F1-score: 0.105935
+ROC-AUC: 0.965655
+Average precision: 0.671924
+Specificity: 0.975481
+Majority-class accuracy: 0.998326
+
+CLASSIFICATION REPORT
+------------------------------------------------------------
+              precision    recall  f1-score   support
+
+  Legitimate       1.00      0.98      0.99     56651
+  Fraudulent       0.06      0.87      0.11        95
+
+    accuracy                           0.98     56746
+   macro avg       0.53      0.92      0.55     56746
+weighted avg       1.00      0.98      0.99     56746
+
+
+CONFUSION MATRIX
+------------------------------------------------------------
+True negatives: 55262
+False positives: 1389
+False negatives: 12
+True positives: 83
+
+MODEL PERFORMANCE
+------------------------------------------------------------
+Training time: 0.954056 seconds
+Prediction time: 0.003137 seconds
+Batch prediction time per sample: 0.000055 ms
+Model size: 1.0928 KB
+
+CONCLUSION
+------------------------------------------------------------
+Logistic Regression was trained as the initial baseline
+for credit card fraud detection.
+
+Balanced class weights were used to address the
+significant imbalance between legitimate and fraudulent
+transactions.
+
+The model was evaluated on unseen testing data using
+multiple classification metrics rather than relying
+on accuracy alone.

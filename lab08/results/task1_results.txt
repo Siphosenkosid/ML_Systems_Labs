@@ -1,0 +1,108 @@
+LAB 08 - TASK 1: MANUAL QUANTIZATION
+=======================================================
+
+Original weight tensor:
+[[-0.8 -0.4  0.2]
+ [ 0.1  0.3  0.5]]
+
+-------------------------------------------------------
+Precision: 8-bit
+Method: Per-tensor
+Zero-point: 0
+Scale:
+0.006299212598425198
+Quantized tensor:
+[[-127  -63   32]
+ [  16   48   79]]
+Reconstructed tensor:
+[[-0.8        -0.39685039  0.2015748 ]
+ [ 0.1007874   0.3023622   0.4976378 ]]
+MSE: 0.0000040300
+
+-------------------------------------------------------
+Precision: 8-bit
+Method: Per-channel
+Zero-point: 0
+Scale:
+[[0.00629921]
+ [0.00393701]]
+Quantized tensor:
+[[-127  -63   32]
+ [  25   76  127]]
+Reconstructed tensor:
+[[-0.8        -0.39685039  0.2015748 ]
+ [ 0.0984252   0.2992126   0.5       ]]
+MSE: 0.0000025833
+
+-------------------------------------------------------
+Precision: 4-bit
+Method: Per-tensor
+Zero-point: 0
+Scale:
+0.1142857142857143
+Quantized tensor:
+[[-7 -4  2]
+ [ 1  3  4]]
+Reconstructed tensor:
+[[-0.8        -0.45714286  0.22857143]
+ [ 0.11428571  0.34285714  0.45714286]]
+MSE: 0.0013265306
+
+-------------------------------------------------------
+Precision: 4-bit
+Method: Per-channel
+Zero-point: 0
+Scale:
+[[0.11428571]
+ [0.07142857]]
+Quantized tensor:
+[[-7 -4  2]
+ [ 1  4  7]]
+Reconstructed tensor:
+[[-0.8        -0.45714286  0.22857143]
+ [ 0.07142857  0.28571429  0.5       ]]
+MSE: 0.0008503401
+
+-------------------------------------------------------
+Precision: 2-bit
+Method: Per-tensor
+Zero-point: 0
+Scale:
+0.8
+Quantized tensor:
+[[-1  0  0]
+ [ 0  0  1]]
+Reconstructed tensor:
+[[-0.8  0.   0. ]
+ [ 0.   0.   0.8]]
+MSE: 0.0650000000
+
+-------------------------------------------------------
+Precision: 2-bit
+Method: Per-channel
+Zero-point: 0
+Scale:
+[[0.8]
+ [0.5]]
+Quantized tensor:
+[[-1  0  0]
+ [ 0  1  1]]
+Reconstructed tensor:
+[[-0.8  0.   0. ]
+ [ 0.   0.5  0.5]]
+MSE: 0.0416666667
+
+QUANTIZATION ERROR COMPARISON
+=======================================================
+ Bits      Method      MSE
+    8  Per-tensor 0.000004
+    8 Per-channel 0.000003
+    4  Per-tensor 0.001327
+    4 Per-channel 0.000850
+    2  Per-tensor 0.065000
+    2 Per-channel 0.041667
+
+Conclusion:
+Lower bit widths reduce numerical precision.
+Per-channel scaling adapts to each channel.
+The MSE measures reconstruction error.

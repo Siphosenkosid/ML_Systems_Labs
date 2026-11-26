@@ -1,0 +1,22 @@
+project_name: Credit Card Fraud Detection
+
+dataset:
+  path: individual_project/data/creditcard.csv
+  target: Class
+  remove_duplicates: true
+
+split:
+  test_size: 0.20
+  random_state: 42
+  stratify: true
+
+preprocessing:
+  scaling: StandardScaler
+
+model:
+  name: LogisticRegression
+  class_weight: balanced
+  max_iter: 1000
+
+output:
+  directory: individual_project/results

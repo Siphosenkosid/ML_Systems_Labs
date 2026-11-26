@@ -1,0 +1,99 @@
+{
+    "pytorch_version": "2.3.1+cpu",
+    "backend": "fbgemm",
+    "device": "cpu",
+    "cpu_threads": 1,
+    "test_samples": 10000,
+    "calibration_samples": 500,
+    "random_seed": 42,
+    "warmup_iterations": 50,
+    "timing_iterations": 500,
+    "timing_repetitions": 5,
+    "latency_statistic": "median",
+    "models": [
+        {
+            "Model": "Baseline FP32",
+            "Parameters": 856074,
+            "Precision": "FP32",
+            "Accuracy (%)": 90.94,
+            "Size (MB)": 3.269529342651367,
+            "Latency (ms)": 0.7812469992786646,
+            "Accuracy Drop (pp)": 0.0,
+            "Size Reduction (%)": 0.0,
+            "Compression Ratio": 1.0,
+            "Speedup": 1.0
+        },
+        {
+            "Model": "Pruned FP32",
+            "Parameters": 440650,
+            "Precision": "FP32",
+            "Accuracy (%)": 91.23,
+            "Size (MB)": 1.6849193572998047,
+            "Latency (ms)": 0.4543118001893163,
+            "Accuracy Drop (pp)": -0.29000000000000625,
+            "Size Reduction (%)": 48.4659967622909,
+            "Compression Ratio": 1.9404663662307289,
+            "Speedup": 1.719627354942379
+        },
+        {
+            "Model": "Distilled FP32",
+            "Parameters": 105866,
+            "Precision": "FP32",
+            "Accuracy (%)": 88.63,
+            "Size (MB)": 0.40721893310546875,
+            "Latency (ms)": 0.39633379969745874,
+            "Accuracy Drop (pp)": 2.3100000000000023,
+            "Size Reduction (%)": 87.54502894978634,
+            "Compression Ratio": 8.028922716627635,
+            "Speedup": 1.9711843902160986
+        },
+        {
+            "Model": "Dynamic INT8",
+            "Parameters": 856074,
+            "Precision": "Mixed FP32/INT8",
+            "Accuracy (%)": 90.92,
+            "Size (MB)": 0.8774776458740234,
+            "Latency (ms)": 0.8428103998303413,
+            "Accuracy Drop (pp)": 0.01999999999999602,
+            "Size Reduction (%)": 73.16195837647848,
+            "Compression Ratio": 3.7260542852857617,
+            "Speedup": 0.9269546263737733
+        },
+        {
+            "Model": "Static INT8",
+            "Parameters": 856074,
+            "Precision": "Static INT8",
+            "Accuracy (%)": 90.79,
+            "Size (MB)": 0.8355884552001953,
+            "Latency (ms)": 0.6384730003774166,
+            "Accuracy Drop (pp)": 0.14999999999999147,
+            "Size Reduction (%)": 74.44315778727376,
+            "Compression Ratio": 3.912846476400914,
+            "Speedup": 1.2236179115120778
+        },
+        {
+            "Model": "Pruned + INT8",
+            "Parameters": 440650,
+            "Precision": "Static INT8",
+            "Accuracy (%)": 91.23,
+            "Size (MB)": 0.43828773498535156,
+            "Latency (ms)": 0.5408907998353243,
+            "Accuracy Drop (pp)": -0.29000000000000625,
+            "Size Reduction (%)": 86.59477591261103,
+            "Compression Ratio": 7.459778318370331,
+            "Speedup": 1.4443710255684095
+        },
+        {
+            "Model": "Distilled + INT8",
+            "Parameters": 105866,
+            "Precision": "Static INT8",
+            "Accuracy (%)": 88.44,
+            "Size (MB)": 0.1114349365234375,
+            "Latency (ms)": 0.5314017999917269,
+            "Accuracy Drop (pp)": 2.5,
+            "Size Reduction (%)": 96.59171321481179,
+            "Compression Ratio": 29.34025400520334,
+            "Speedup": 1.4701625009377601
+        }
+    ]
+}

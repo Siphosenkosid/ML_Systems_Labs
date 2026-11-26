@@ -1,0 +1,24 @@
+{
+    "backend": "fbgemm",
+    "device": "cpu",
+    "cpu_threads": 1,
+    "quantized_layers": [
+        "classifier.1",
+        "classifier.3",
+        "classifier.5"
+    ],
+    "baseline": {
+        "accuracy_percent": 90.94,
+        "size_mb": 3.269529342651367,
+        "latency_ms": 1.1209538001567125
+    },
+    "dynamic_quantized": {
+        "accuracy_percent": 90.92,
+        "size_mb": 0.8773021697998047,
+        "latency_ms": 1.0967231998220086
+    },
+    "accuracy_drop_pp": 0.01999999999999602,
+    "size_reduction_percent": 73.16732538976476,
+    "compression_ratio": 3.7267995625697075,
+    "speedup": 1.022093633415101
+}

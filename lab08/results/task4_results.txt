@@ -1,0 +1,47 @@
+
+LAB 08 - TASK 4: ONNX EXPORT AND VALIDATION
+============================================================
+
+PyTorch version: 2.3.1+cpu
+ONNX version: 1.16.1
+ONNX Runtime version: 1.18.0
+ONNX opset: 17
+Device: CPU
+Runtime provider: CPUExecutionProvider
+CPU threads: 1
+Test samples: 10000
+Evaluation batch size: 128
+Latency batch size: 1
+Warm-up iterations: 50
+Timing iterations: 500
+
+ONNX VALIDATION
+------------------------------------------------------------
+Structure validation: PASSED
+Numerical tolerance: 0.0001
+Maximum absolute difference: 0.0000061989
+Mean absolute difference: 0.0000005130
+Prediction agreement: 100.00%
+Numerical validation: PASSED
+
+MODEL COMPARISON
+------------------------------------------------------------
+       Model  Accuracy (%)  Size (MB)  Latency (ms)
+PyTorch FP32       90.9400     3.2695        1.0246
+   ONNX FP32       90.9400     3.2681        0.2101
+
+PERFORMANCE ANALYSIS
+------------------------------------------------------------
+Accuracy difference: 0.0000 percentage points
+ONNX inference speedup: 4.88x
+
+OBSERVATIONS
+------------------------------------------------------------
+ONNX provides a portable model representation.
+ONNX Runtime executes the exported model independently
+of the PyTorch model implementation.
+
+Graph optimization may improve inference performance.
+
+The exported model remains in FP32 precision.
+ONNX export alone does not perform INT8 quantization.

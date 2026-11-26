@@ -1,0 +1,71 @@
+
+DEPLOYMENT RECOMMENDATIONS
+=================================================================
+
+1. CLOUD
+Recommended model: Pruned FP32
+Accuracy: 91.23%
+Size: 1.6849 MB
+Latency: 0.4543 ms
+
+Cloud environments generally have more computational
+resources. The model with the highest accuracy is
+selected because model size is less restrictive.
+
+
+2. EDGE
+Recommended model: Pruned FP32
+Accuracy: 91.23%
+Size: 1.6849 MB
+Latency: 0.4543 ms
+
+Edge devices require fast local inference while
+maintaining reliable accuracy.
+
+The fastest model within 1 percentage point of
+baseline accuracy is selected.
+
+
+3. MOBILE
+Recommended model: Distilled + INT8
+Accuracy: 88.44%
+Size: 0.1114 MB
+Latency: 0.5314 ms
+
+Mobile devices have limited storage, memory and
+battery capacity.
+
+The smallest model within 2.5 percentage points
+of baseline accuracy is selected.
+
+
+4. TINYML
+Candidate model: Distilled + INT8
+Accuracy: 88.44%
+Size: 0.1114 MB
+Latency: 0.5314 ms
+
+TinyML requires extremely small models suitable
+for microcontrollers.
+
+The smallest model is selected as a candidate
+for further conversion and optimisation.
+
+Actual deployment requires checking flash memory,
+activation RAM, supported operators and runtime
+compatibility.
+
+
+LIMITATIONS
+-----------------------------------------------------------------
+All latency measurements were performed on a desktop
+CPU using the FBGEMM backend.
+
+Actual performance on cloud, edge, mobile and TinyML
+hardware must be measured separately.
+
+The accuracy thresholds are experimental selection
+criteria rather than universal deployment requirements.
+
+Checkpoint size does not represent total runtime
+memory consumption.

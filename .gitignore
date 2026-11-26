@@ -9,3 +9,7 @@ data/
 # Lab 07 model checkpoints
 /lab07/results/models/
 /lab07/results/sparse/
+
+individual_project/data/
+
+individual_project/data/

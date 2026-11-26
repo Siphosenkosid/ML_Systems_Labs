@@ -1,0 +1,54 @@
+
+CREDIT CARD FRAUD DETECTION
+DATA PREPROCESSING REPORT
+============================================================
+
+Original dataset rows: 284807
+Missing values: 0
+Duplicate rows removed: 1081
+Cleaned dataset rows: 283726
+Input features: 30
+Target variable: Class
+
+TRAIN-TEST SPLIT
+------------------------------------------------------------
+Training samples: 226980
+Testing samples: 56746
+Random seed: 42
+Stratified split: True
+
+TRAINING CLASS DISTRIBUTION
+------------------------------------------------------------
+Class
+0    226602
+1       378
+
+TESTING CLASS DISTRIBUTION
+------------------------------------------------------------
+Class
+0    56651
+1       95
+
+PREPROCESSING
+------------------------------------------------------------
+Duplicate removal
+Median imputation
+StandardScaler
+Training-only fitting
+
+DATA VALIDATION
+------------------------------------------------------------
+Training data valid: True
+Testing data valid: True
+
+CONCLUSION
+------------------------------------------------------------
+The dataset was cleaned and divided into training and
+testing sets using stratified sampling to preserve the
+class distribution.
+
+Feature scaling was fitted only on the training data
+to prevent preprocessing-related data leakage.
+
+Class imbalance was preserved during preprocessing.
+Class weighting will be applied during baseline training.

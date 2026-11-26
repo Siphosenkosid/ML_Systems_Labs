@@ -1,0 +1,70 @@
+
+LAB 08 - TASK 3: STATIC QUANTIZATION
+============================================================
+
+PyTorch version: 2.3.1+cpu
+Device: CPU
+Backend: fbgemm
+CPU threads: 1
+Calibration samples: 500
+Random seed: 42
+Test samples: 10000
+Evaluation batch size: 128
+Latency batch size: 1
+Warm-up iterations: 50
+Timing iterations: 500
+
+CALIBRATION CLASS DISTRIBUTION
+------------------------------------------------------------
+T-shirt/top: 57
+Trouser: 52
+Pullover: 59
+Dress: 46
+Coat: 56
+Sandal: 48
+Shirt: 52
+Sneaker: 45
+Bag: 37
+Ankle boot: 48
+
+QUANTIZED LAYERS
+------------------------------------------------------------
+features.0: ConvReLU2d
+features.3: ConvReLU2d
+classifier.1: LinearReLU
+classifier.3: LinearReLU
+classifier.5: Linear
+
+MODEL COMPARISON
+------------------------------------------------------------
+        Model  Accuracy (%)  Size (MB)  Latency (ms)
+Baseline FP32       90.9400     3.2695        1.5043
+ Dynamic INT8       90.9200     0.8773        1.0967
+  Static INT8       90.7900     0.8353        0.8881
+
+PERFORMANCE ANALYSIS
+------------------------------------------------------------
+Accuracy drop: 0.1500 percentage points
+Size reduction: 74.45%
+Compression ratio: 3.91x
+Inference speedup: 1.69x
+
+WHY REPRESENTATIVE CALIBRATION DATA IS IMPORTANT
+------------------------------------------------------------
+Calibration estimates the activation ranges of the model.
+
+The calibration subset should represent the real input
+distribution, including different clothing classes and
+image characteristics.
+
+Unrepresentative calibration data may produce unsuitable
+quantization scales and zero-points, causing clipping,
+rounding errors and reduced model accuracy.
+
+Training images are used instead of test images to avoid
+using the test dataset during model calibration.
+
+NOTE
+------------------------------------------------------------
+Dynamic quantization metrics were loaded from Task 2.
+The baseline and static models were measured in this run.

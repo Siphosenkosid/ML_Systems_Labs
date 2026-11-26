@@ -1,0 +1,40 @@
+{
+    "backend": "fbgemm",
+    "device": "cpu",
+    "cpu_threads": 1,
+    "calibration_samples": 500,
+    "random_seed": 42,
+    "calibration_distribution": {
+        "T-shirt/top": 57,
+        "Trouser": 52,
+        "Pullover": 59,
+        "Dress": 46,
+        "Coat": 56,
+        "Sandal": 48,
+        "Shirt": 52,
+        "Sneaker": 45,
+        "Bag": 37,
+        "Ankle boot": 48
+    },
+    "quantized_layers": [
+        "features.0: ConvReLU2d",
+        "features.3: ConvReLU2d",
+        "classifier.1: LinearReLU",
+        "classifier.3: LinearReLU",
+        "classifier.5: Linear"
+    ],
+    "baseline": {
+        "accuracy_percent": 90.94,
+        "size_mb": 3.269529342651367,
+        "latency_ms": 1.5043274005874991
+    },
+    "static_quantized": {
+        "accuracy_percent": 90.79,
+        "size_mb": 0.8353214263916016,
+        "latency_ms": 0.8880976000800729
+    },
+    "accuracy_drop_pp": 0.14999999999999147,
+    "size_reduction_percent": 74.45132498140505,
+    "compression_ratio": 3.9140973035673103,
+    "speedup": 1.6938762141141532
+}
